@@ -27,7 +27,7 @@ export const MoviePoster = ({ movie, height = 420, width = 300 }: Props) => {
         >
             <View style={globalStyles.imageContainer}>
                 <Image
-                    style={globalStyles.image}
+                    style={globalStyles.imageContainer}
                     source={{ uri: movie.poster }}
                 />
             </View>

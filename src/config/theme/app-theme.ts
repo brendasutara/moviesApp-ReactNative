@@ -33,21 +33,59 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: colors.background,
     },
 
+    titleApp: {
+        fontSize: 30,
+        fontWeight: '500',
+        marginLeft: 10,
+        color: colors.textPrimary
+    },
     title: {
         fontSize: 30,
         fontWeight: '300',
-        marginLeft: 20,
+        marginLeft: 10,
         marginBottom: 10,
         color: colors.textSecondary
     },
-
-    image: {
-        flex: 1,
-        borderRadius: 12,
+    titleDetail: {
+        fontSize: 20,
+        fontWeight: 'bold',
     },
+    subTitle: {
+        fontSize: 16,
+        opacity: 0.8,
+    },
+
     imageContainer: {
         flex: 1,
         borderRadius: 12,
-    }
+    },
+    imageBorder: {
+        flex: 1,
+        overflow: 'hidden',
+        borderBottomEndRadius: 25,
+        borderBottomStartRadius: 25,
+    },
+    posterImage: {
+        flex: 1
+    },
+    marginContainer: {
+        marginHorizontal: 20,
+        marginTop: 20,
+    },
+    backButton: {
+        position: 'absolute',
+        zIndex: 999,
+        elevation: 9,
+        top: 35,
+        left: 10,
+    },
+    backButtonText: {
+        color: 'white',
+        fontSize: 25,
+        fontWeight: 'bold',
+        textShadowColor: 'rgba(0, 0, 0, 0.55)',
+        textShadowOffset: { width: -1, height: 1 },
+        textShadowRadius: 10,
+    },
 
 })

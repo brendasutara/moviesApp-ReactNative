@@ -20,6 +20,11 @@ export const HomeScreen = () => {
                 marginTop: top + 20,
                 paddingBottom: 30,
             }}>
+                <Text
+                    style={globalStyles.titleApp}
+                >
+                    Movies
+                </Text>
                 <PosterCarousel movies={nowPlaying} />
 
                 <HorizontalCarousel
