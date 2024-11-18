@@ -29,11 +29,25 @@ export const MovieHeader = ({ poster, title, releaseDate, duration }: Props) => 
                 <Text style={styles.title}>{title}</Text>
                 <Text style={styles.subTitle}>Estreno en el {releaseDate.toLocaleDateString('es-ES', { year: 'numeric' })} - {duration} min</Text>
             </View>
+            <View style={{ justifyContent: 'center', flexDirection: 'row', marginVertical: 30 }}>
+                <View style={{ alignItems: 'center', marginHorizontal: 20, flexDirection: 'column' }} >
+                    <IonIcon name='add' color={colors.white100} size={30} />
+                    <Text style={{ fontSize: 16, color: colors.textPrimary, paddingTop: 10 }}>MI LISTA</Text>
+                </View>
+                <View style={{ alignItems: 'center', marginHorizontal: 20, flexDirection: 'column' }} >
+                    <IonIcon name='videocam-outline' color={colors.white100} size={30} />
+                    <Text style={{ fontSize: 16, color: colors.textPrimary, paddingTop: 10 }}>TRAILER</Text>
+                </View>
+                <View style={{ alignItems: 'center', marginHorizontal: 20, flexDirection: 'column' }} >
+                    <IonIcon name='cloud-download-outline' color={colors.white100} size={30} />
+                    <Text style={{ fontSize: 16, color: colors.textPrimary, paddingTop: 10 }}>DESCARGAR</Text>
+                </View>
+            </View>
             <Pressable style={({ pressed }) => ({
                 ...styles.backButton,
                 opacity: pressed ? 0.9 : 1,
             })} onPress={() => navigation.goBack()}>
-                <IonIcon name='chevron-back' color={colors.orange} size={30} />
+                <IonIcon name='chevron-back' color={colors.white100} size={30} />
             </Pressable>
         </View>
     );
@@ -43,7 +57,6 @@ const styles = StyleSheet.create({
     imageContainer: {
         width: '100%',
         backgroundColor: colors.background,
-        paddingBottom: 20
     },
     imageBorder: {
         flex: 1,
@@ -80,6 +93,11 @@ const styles = StyleSheet.create({
         left: 10,
         zIndex: 999,
         elevation: 9,
+        backgroundColor: colors.black80,
+        paddingHorizontal: 4,
+        paddingVertical: 4,
+        borderRadius: 50,
+        opacity: 0.2
     },
     buttonText: {
         fontSize: 25,

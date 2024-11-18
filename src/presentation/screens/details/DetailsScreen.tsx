@@ -13,7 +13,7 @@ export const DetailsScreen = ({ route }: Props) => {
 
     const { movieId } = route.params;
 
-    const { isLoading, movie } = useMovie(movieId)
+    const { isLoading, movie, cast = [] } = useMovie(movieId)
 
     if (isLoading) {
         return <Text>Loading</Text>
@@ -26,7 +26,7 @@ export const DetailsScreen = ({ route }: Props) => {
                 releaseDate={movie!.releaseDate}
                 poster={movie!.poster}
                 duration={movie!.duration} />
-            <MovieDetails movie={movie!} />
+            <MovieDetails movie={movie!} cast={cast} />
         </ScrollView>
     )
 }
