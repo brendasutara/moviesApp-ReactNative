@@ -2,7 +2,7 @@
 
 ## Vista previa applicación
 
-![Vista Previa](src/assets/images/movie.gif)
+![Vista Previa](src/assets/images/Screenshot_136.png)
 ![Vista Previa](src/assets/images/Screenshot_137.png)
 
 ## Dev
