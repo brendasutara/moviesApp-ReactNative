@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { PosterCarousel } from '../../components/movies/PosterCarousel';
 import { colors, globalStyles } from '../../../config/theme/app-theme';
 import { HorizontalCarousel } from '../../components/movies/HorizontalCarousel';
+import { FullScreenLoader } from '../../components/loaders/FullScreenLoader';
 
 export const HomeScreen = () => {
 
@@ -11,7 +12,7 @@ export const HomeScreen = () => {
     const { isLoading, nowPlaying, popular, topRated, upcoming, popularNextPage } = useMovies();
 
     if (isLoading) {
-        return (<Text>Cargando...</Text>)
+        return <FullScreenLoader />
     }
 
     return (
