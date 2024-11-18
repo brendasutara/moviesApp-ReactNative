@@ -48,11 +48,14 @@ export const globalStyles = StyleSheet.create({
     },
     titleDetail: {
         fontSize: 20,
+        marginBottom: 10,
         fontWeight: 'bold',
+        color: colors.textSecondary
     },
     subTitle: {
         fontSize: 16,
         opacity: 0.8,
+        color: colors.textSecondary
     },
 
     imageContainer: {
@@ -69,7 +72,7 @@ export const globalStyles = StyleSheet.create({
         flex: 1
     },
     marginContainer: {
-        marginHorizontal: 20,
+        marginHorizontal: 15,
         marginTop: 20,
     },
     backButton: {

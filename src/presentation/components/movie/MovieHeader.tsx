@@ -5,12 +5,13 @@ import { colors } from '../../../config/theme/app-theme';
 import { IonIcon } from '../shared/IonIcon';
 
 interface Props {
-    poster: string;
-    originalTitle: string;
-    title: string;
+    poster: string,
+    releaseDate: Date,
+    title: string,
+    duration: number
 }
 
-export const MovieHeader = ({ poster, originalTitle, title }: Props) => {
+export const MovieHeader = ({ poster, title, releaseDate, duration }: Props) => {
     const { height: screenHeight } = useWindowDimensions();
     const navigation = useNavigation();
 
@@ -20,19 +21,19 @@ export const MovieHeader = ({ poster, originalTitle, title }: Props) => {
                 <Image style={styles.posterImage} source={{ uri: poster }} />
                 <LinearGradient
                     colors={['transparent', colors.background]}
-                    locations={[0.5, 0.95]}
+                    locations={[0.2, 0.95]}
                     style={styles.gradientOverlay}
                 />
             </View>
-            <View style={{ marginHorizontal: 20 }}>
-                <Text style={styles.subTitle}>{originalTitle}</Text>
+            <View style={{ alignItems: 'center', marginHorizontal: 20, marginTop: -50 }}>
                 <Text style={styles.title}>{title}</Text>
+                <Text style={styles.subTitle}>Estreno en el {releaseDate.toLocaleDateString('es-ES', { year: 'numeric' })} - {duration} min</Text>
             </View>
             <Pressable style={({ pressed }) => ({
                 ...styles.backButton,
                 opacity: pressed ? 0.9 : 1,
             })} onPress={() => navigation.goBack()}>
-                <IonIcon name='chevron-back' color='white' size={30} />
+                <IonIcon name='chevron-back' color={colors.orange} size={30} />
             </Pressable>
         </View>
     );
@@ -68,7 +69,8 @@ const styles = StyleSheet.create({
         color: colors.textSecondary,
     },
     title: {
-        fontSize: 20,
+        fontSize: 30,
+        marginBottom: 5,
         fontWeight: 'bold',
         color: colors.textPrimary,
     },
